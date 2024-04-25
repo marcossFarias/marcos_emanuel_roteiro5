@@ -56,18 +56,18 @@ public class MinhaFila<E> implements FilaIF<E> {
     }
 
     @Override
-    public E verificarCauda() throws FilaVaziaException {
+    public E verificarCauda() {
         if (this.isEmpty()) {
-            throw new FilaVaziaException("fila vazia");
+            throw new NoSuchElementException("fila vazia");
         }
 
         return this.tail.data;
     }
 
     @Override
-    public E verificarCabeca() throws FilaVaziaException {
+    public E verificarCabeca() {
         if (this.isEmpty()) {
-            throw new FilaVaziaException("fila vazia");
+            throw new NoSuchElementException("fila vazia");
         }
 
         return this.head.data;

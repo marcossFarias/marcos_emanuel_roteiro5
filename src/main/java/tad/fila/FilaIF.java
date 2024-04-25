@@ -5,9 +5,9 @@ public interface FilaIF<E>{
 
     public E desenfileirar() throws FilaVaziaException;
 
-    public E verificarCauda() throws FilaVaziaException;
+    public E verificarCauda();
 
-    public E verificarCabeca() throws FilaVaziaException;
+    public E verificarCabeca();
 
     public boolean isEmpty();
 
