@@ -1,6 +1,6 @@
 package tad.fila;
 
-import org.w3c.dom.Node;
+import java.util.NoSuchElementException;
 
 public class MinhaFila<E> implements FilaIF<E> {
     private Node<E> head;
@@ -56,12 +56,20 @@ public class MinhaFila<E> implements FilaIF<E> {
     }
 
     @Override
-    public E verificarCauda() {
+    public E verificarCauda() throws FilaVaziaException {
+        if (this.isEmpty()) {
+            throw new FilaVaziaException("fila vazia");
+        }
+
         return this.tail.data;
     }
 
     @Override
-    public E verificarCabeca() {
+    public E verificarCabeca() throws FilaVaziaException {
+        if (this.isEmpty()) {
+            throw new FilaVaziaException("fila vazia");
+        }
+
         return this.head.data;
     }
 
